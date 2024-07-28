@@ -1,16 +1,19 @@
-import React from 'react'
+// Card.js
 
-const Card = ({icon, title, value}) => {
+import React from 'react';
+
+const Card = ({ icon, title, value, onClick }) => {
   return (
-    <div className='bg-white text-dark p-4 rounded-lg shadow-md flex items-center space-x-6
-    dark:bg-gray-800 dark:text-white'>
-        <div className='text-3xl text-gray-500'>{icon}</div>
-        <div>
-            <h2 className='text-lg font-semibold'>{title}</h2>
-            <p className='text-xl'>{value}</p>
+    <div onClick={onClick} className='bg-white p-4 dark:bg-gray-800 rounded-lg shadow-md cursor-pointer'>
+      <div className='flex items-center justify-between'>
+        <div className='text-3xl'>{icon}</div>
+        <div className='text-right'>
+          <h3 className='text-lg font-semibold'>{title}</h3>
+          <p className='text-2xl'>{value}</p>
         </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
